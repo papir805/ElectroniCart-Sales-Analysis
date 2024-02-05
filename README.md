@@ -94,9 +94,9 @@ Total sales dropped significantly for regular customers in early 2021 when it wa
     * Apple iPhone
     * 27in 4K Gaming Monitor
 * On average, about 5% of orders get refunded. However, the refund rate is much higher than average for the Thinkpad Laptop (12%), Macbook Air Laptop (11%), and Apple iPhone (8%).
-    * These items have the highest AOV at $1,588, $1,100, and $741, respectively, and each return significantly affects ElectroniCart's revenue.
+    * These items have the highest AOV at $1,588, $1,100, and $741, respectively, and each return has the potential to significantly affect ElectroniCart's revenue.
     * Despite a high refund rate and AOV, the Apple iPhone represents a tiny chunk of ElectroniCart's sales and has a negligible impact on dollars refunded.
-* **Important observation: the Bose Soundsport Headphones sold only about $3,000 between 2019 and 2022.**
+* **Important observation: While unrelated to returns, it's worth noting that the Bose Soundsport Headphones sold only about $3,000 between 2019 and 2022 and had by far the worst sales performance of any item ElectroniCart sells.**
 
 !['refunds_total_refunds_and_refund_count'](./images/refunds_total_refunds_and_refund_count.png)
 * Four items make up the vast majority (98%) of dollars refunded:
@@ -105,8 +105,8 @@ Total sales dropped significantly for regular customers in early 2021 when it wa
     * Apple Airpods Headphones
     * Thinkpad Laptop
 * The Macbook Air Laptop and Thinkpad Laptop significantly contributed to dollars refunded and were noted to have high refund rates earlier.
-* The 27in 4K Gaming Monitor and Apple Airpods Headphones have low return rates but are the most frequently refunded item, constituting 48% of dollars refunded.
-* The Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor account for 8% of all sales or ~$2.2 million refunded between 2019-2022.
+* The 27in 4K Gaming Monitor and Apple Airpods Headphones have low refund rates but are the most frequently refunded item, constituting 48% of dollars refunded.
+* The Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor account for 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022.
 
 
 ## Recommendations
@@ -115,18 +115,18 @@ Based on the insights listed above, the company should consider the following re
 ### Sales Team
 * Increase promotions during late spring and summer to increase sales during slower times.
 * Investigate why sales drop between September and October. Look for ways to stimulate sales.
+* Collaborate with the loyalty team to identify:
+    * Why spending for regular customers dropped in early 2021 while loyalty spending continued to increase.
+    * Why spending for both types of customers decreased in late 2022.
+
 
 ### Loyalty Team
 * Continue the loyalty program:
     * Identify ways to increase the number of participating users.
     * Identify ways to increase AOV.
-* Collaborate with the sales team to identify:
-    * Why spending for regular customers dropped in early 2021 while loyalty spending continued to increase.
-    * Why spending for both types of customers decreased in late 2022.
 
 ### Inventory Team
-* High return rates for certain items, like the Macbook Air Laptop and Thinkpad Laptop, or high return volume for other items, like the Apple Airpods Headphones and 27in 4K Gaming Monitor, are eating away at ElectroniCart's bottom line.
-    * Start tracking reasons for customer returns and identify why certain products get returned more frequently.  Fix those issues.
+* Start tracking reasons for customer returns and identify why certain products get returned more frequently and fix those issues.  High return rates for certain items, like the Macbook Air Laptop and Thinkpad Laptop, or high return volume for other items, like the Apple Airpods Headphones and 27in 4K Gaming Monitor, are eating away at ElectroniCart's bottom line.
 * Phase out the sale of Bose Soundsport Headphones due to poor sales performance.  
 
 
