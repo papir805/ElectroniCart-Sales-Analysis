@@ -7,6 +7,8 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
         * Total sales
         * Average order value (AOV)
         * Sales volume
+    * Product Mix
+        * Which items are most purchased?
     * Seasonality
         * How do the NSMs change over time?
         * Which month(s) see the highest or lowest NSMs?
@@ -28,9 +30,9 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
 The dataset required cleaning before analysis as there were several data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
 
 ## Dataset Structure
-The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned.xlsx) containing 108,127 records with order ID as the table grain. Thus, each record represents a unique order, although it should be noted that each unique order (order ID) contains only a single item.
+The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned.xlsx) containing 108,127 records with order ID as the table grain, and each record represents a unique order.  Note: each unique order contains single item only.
 
-**Table 1)** *Fields relevant to analysis*
+**Table 1)** *Relevant Fields*
 | Field Label | Data Type | Example | 
 |---|---|---|
 | order_id | string | 5f87a27686c1
@@ -44,7 +46,7 @@ The dataset initially came as an [Excel workbook](https://github.com/papir805/El
 ## Insights Summary
 
 ### Overall Sales Trends:
-**Overview**: ElectroniCart experienced staggering annual sales growth in 2020 (163%) when the pandemic started, and more people placed orders at home. Sales slowly decreased in 2021 (10%) and dropped sharply in 2022 (46%) as lockdowns eased and people progressively returned to normalcy.
+**Overview**: ElectroniCart experienced staggering annual sales growth in 2020 (163%) when the pandemic started, and more people placed orders at home. Sales decreased in 2021 (10%) and dropped sharply in 2022 (46%) as lockdowns eased and people progressively returned to normalcy.
 
 **Table 2)** *Minimum and Maximum Annual Sales*
 | Year | Lowest Monthly Total Sales | Highest Monthly Total Sales
@@ -54,13 +56,24 @@ The dataset initially came as an [Excel workbook](https://github.com/papir805/El
 | 2021 | $632,000 | $1,030,000
 | 2022 | $178,000 | $705,000
 
+#### Product Mix
+![product_mix](./images/product_mix.png)
+* Four items make up 96% of ElectroniCart's sales:
+    * 27in 4K Gaming Monitor
+    * Apple Airpods Headphones
+    * Macbook Air Laptop
+    * Thinkpad Laptop
+* The Bose Soundsport Headphones sold only about $3,000 between 2019 and 2022 and had by far the worst sales performance of any item ElectroniCart sells.
+
 #### Seasonality
 ##### Total Sales:
 ![sales_by_year](./images/sales_by_year.png)
 * Sales tend to fall slowly from January until May or June, then pick up until reaching their maximum at the end of the year.  The only exception is 2020 when COVID lockdowns were in full effect.
 * All years exhibit a drop in sales from September to October, ranging from 18 to 55%.
+    * Sales of the 27in 4K Gaming Monitor, Apple Airpods Headphones, and Thinkpad Laptop drop anywhere between 20 - 80% during these months.
+    * Sales of the Macbook Air Laptop tend to see smaller fluctuations, gaining 1% between Sept and Oct 2019, and dropping 2% or 9% during the same period in 2020 and 2021.
 * Sales were highest in 2020 and 2021, likely due to the increased number of people being home when COVID lockdowns were in full effect. Sales before COVID-19 in 2019 and after COVID-19 in 2022 show similar sales levels, indicating that consumer purchasing behavior may have returned to normal.
-* Unfortunately for ElectroniCart, the most recent data shows sales are at an all-time low.
+* Unfortunately for ElectroniCart, the last three months  of sales are at an all-time low.
 
 ##### Sales Volume:
 !['sales_volume_heatmap'](./images/sales_volume_heatmap.png)
@@ -72,7 +85,7 @@ The dataset initially came as an [Excel workbook](https://github.com/papir805/El
 * AOV was consistently high throughout 2020 and much of 2021.  A combination of high AOV and high sales volume made these two years extremely successful.
 
 #### Loyalty Program:
-Since the loyalty program's implementation in 2019, performance across total sales and sales volume mirrors the general trends established earlier. They both increase at first and then gradually decrease for regular and loyalty customers.
+Since the loyalty program's implementation in 2019, performance across total sales and sales volume in regular and loyalty customers mirrors the trends established earlier - they increase in 2020 and subsequently decrease.
 
 !['loyalty_hist_total_sales_and_aov'](./images/loyalty_hist_total_sales_and_sales_volume.png)  
 
@@ -84,7 +97,7 @@ AOV experiences the same trend, increasing initially and then gradually decreasi
 
 !['loyalty_total_sales'](./images/loyalty_total_sales.png)
 
-Total sales dropped significantly for regular customers in early 2021 when it was eclipsed by loyalty customer spending.  Loyalty spending remaing on top throughout the rest of 2021 and 2022 until spending for both types of customers drops at the end of 2022.
+Total sales dropped significantly for regular customers in early 2021 when it was eclipsed by loyalty customer spending.  Loyalty spending remained on top throughout the rest of 2021 and 2022 until spending for both types of customers drops in late 2022.
 
 ### Refunds
 !['refunds_aov_and_refund_rate'](./images/refunds_refund_rate_total_sales_aov.png)
@@ -93,20 +106,19 @@ Total sales dropped significantly for regular customers in early 2021 when it wa
     * Macbook Air Laptop
     * Apple iPhone
     * 27in 4K Gaming Monitor
-* On average, about 5% of orders get refunded. However, the refund rate is much higher than average for the Thinkpad Laptop (12%), Macbook Air Laptop (11%), and Apple iPhone (8%).
-    * These items have the highest AOV at $1,588, $1,100, and $741, respectively, and each return has the potential to significantly affect ElectroniCart's revenue.
-    * Despite a high refund rate and AOV, the Apple iPhone represents a tiny chunk of ElectroniCart's sales and has a negligible impact on dollars refunded.
-* **Important observation: While unrelated to returns, it's worth noting that the Bose Soundsport Headphones sold only about $3,000 between 2019 and 2022 and had by far the worst sales performance of any item ElectroniCart sells.**
+* On average, about 5% of orders get refunded. However, the Thinkpad Laptop, Macbook Air Laptop, and Apple iPhone have much higher rates of 12%, 11%, and 8%, respectively.
+    * Because these items have the highest AOV, their returns represent a significant threat to ElectroniCart's revenue.
+    * Despite a high refund rate and AOV, the Apple iPhone represents a tiny chunk of ElectroniCart's sales and returns have a negligible impact on dollars refunded.
 
-!['refunds_total_refunds_and_refund_count'](./images/refunds_total_refunds_and_refund_count.png)
-* Four items make up the vast majority (98%) of dollars refunded:
+!['refunds_percent_dollars_refunded_and_refund_count'](./images/refunds_percent_dollars_refunded_and_refund_count.png)
+* Four items make up nearly all (99%) dollars refunded:
     * Macbook Air Laptop
     * 27in 4K Gaming Monitor
     * Apple Airpods Headphones
     * Thinkpad Laptop
-* The Macbook Air Laptop and Thinkpad Laptop significantly contributed to dollars refunded and were noted to have high refund rates earlier.
-* The 27in 4K Gaming Monitor and Apple Airpods Headphones have low refund rates but are the most frequently refunded item, constituting 48% of dollars refunded.
-* The Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor account for 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022.
+* The Macbook Air Laptop and Thinkpad Laptop significantly contributed to dollars refunded and were noted earlier to have high refund rates.
+* The 27in 4K Gaming Monitor and Apple Airpods Headphones had low refund rates but have the highest refund frequency.
+* Returns of the Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor constitute 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022.
 
 
 ## Recommendations
@@ -114,7 +126,7 @@ Based on the insights listed above, the company should consider the following re
 
 ### Sales Team
 * Increase promotions during late spring and summer to increase sales during slower times.
-* Investigate why sales drop between September and October. Look for ways to stimulate sales.
+* Investigate why sales of the Macbook Air Laptop are relatively stable during Sept to Oct and adapt the findings to other items in the product mix.  
 * Collaborate with the loyalty team to identify:
     * Why spending for regular customers dropped in early 2021 while loyalty spending continued to increase.
     * Why spending for both types of customers decreased in late 2022.
