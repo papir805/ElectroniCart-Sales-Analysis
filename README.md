@@ -139,7 +139,7 @@ Based on the insights listed above, the company should consider the following re
 
 ### Inventory Team
 * Start tracking reasons for customer returns and identify why certain products get returned more frequently and fix those issues.  High return rates for certain items, like the Macbook Air Laptop and Thinkpad Laptop, or high return volume for other items, like the Apple Airpods Headphones and 27in 4K Gaming Monitor, are eating away at ElectroniCart's bottom line.
-* Phase out the sale of Bose Soundsport Headphones due to poor sales performance.  
+* Phase out the sale of Samsung Charging Cable Pack, Samsung Webcame, Apple Iphone, and Bose Soundsport Headphones due to poor sales performance.  
 
 
 
