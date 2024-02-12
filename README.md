@@ -15,7 +15,7 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
         * How do the NSMs compare for loyalty vs. non-loyalty customers?
 2) **Refunds**
     * North Star Metrics (NSM)
-        * Total amount refunded
+        * Total dollars refunded
         * Refund rate
         * Average order value (AOV)
     * How do the NSMs change for each product?
@@ -42,7 +42,7 @@ The dataset initially came as an [Excel workbook](https://github.com/papir805/El
 | usd_price | float | 434.05
 | loyalty | boolean | loyalty = 1 <br> non-loyalty = 0
 
-# Insights Summary
+# Sales Insights
 ## Overview
  **ElectroniCart experienced staggering annual sales growth in 2020 (+163%)** when the pandemic started, and more people were placing orders from home. **Sales decreased in 2021 (-10%) and dropped sharply in 2022 (-46%)** as lockdowns eased and people progressively returned to normalcy ([figure 1](./images/overview_total_sales_and_sales_volume.png)).
 
@@ -68,7 +68,9 @@ Since first being introduced in 2019, loyalty program customers have underperfor
 
 Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer AOV has been more resilient. **From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only droping by 2% for loyalty customers** ([figure 6]((./images/loyalty_hist_aov.png))).
 
-## Refunds
+# Refund Insights
+
+## Refund Rates
 On average, about 5% of orders get refunded. However, several items have refund rates much higher than average: 
 * Thinkpad Laptop (12%)
 * Macbook Air Laptop (11%)
@@ -76,6 +78,7 @@ On average, about 5% of orders get refunded. However, several items have refund 
 
 Despite a high refund rate, the Apple iPhone represents a tiny chunk of ElectroniCart's sales (~1%) and returns have a negligible impact on dollars refunded ([figure 7](./images/refunds_refund_rate_total_sales_aov.png)).
 
+## Dollars Refunded
 Four items make up nearly all (99%) of dollars refunded:
 * Macbook Air Laptop (33%)
 * 27in 4K Gaming Monitor (29%)
@@ -93,18 +96,15 @@ Based on the insights listed above, the company should consider the following re
 ## Sales Team
 * Increase promotions during late spring and summer to increase sales during slower times.
 * Investigate why sales consistently dive during Sept to Oct.  
-* Collaborate with the loyalty team to identify:
-    * Why spending and AOV for loyalty customers has eclipsed non-loyalty customers.  Adapt any findings 
+* Collaborate with the loyalty team to identify why spending and AOV for loyalty customers has eclipsed non-loyalty customers. Use the findings to boost AOV for non-loyalty customers. 
 
 
 ## Loyalty Team
-* Continue the loyalty program:
-    * Identify ways to increase the number of participating users.
-    * Identify ways to increase AOV.
+* Continue the loyalty program and expand its offerings to increase the number of participating users and AOV.
 
 ## Inventory Team
-* Start tracking reasons for customer returns and identify why certain products get returned more frequently and fix those issues.  High return rates for certain items, like the Macbook Air Laptop and Thinkpad Laptop, or high return volume for other items, like the Apple Airpods Headphones and 27in 4K Gaming Monitor, are eating away at ElectroniCart's bottom line.
-* Phase out the sale of Samsung Charging Cable Pack, Samsung Webcame, Apple Iphone, and Bose Soundsport Headphones due to poor sales performance.  
+* Start tracking reasons for customer returns and identify why certain products get returned more frequently.  Fix those issues to minimize return rates for certain items with high AOV, like the Macbook Air Laptop and Thinkpad Laptop, or other items with high return frequencies, like the Apple Airpods Headphones and 27in 4K Gaming Monitor.
+* Phase out the sale of the Samsung Charging Cable Pack, the Samsung Webcame, the Apple Iphone, and the Bose Soundsport Headphones.  Investigate reasons for their poor sales performance and select new product offerings that are more likely to perform well.   
 
 
 # Technical Analysis
