@@ -29,7 +29,7 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
 The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
 
 ## Dataset Structure
-The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records with order ID as the table grain, and each record represents a unique order.  **Note: each unique order only contains a single item**.
+The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records. Order ID is the table grain, and each record represents a unique order.  **Note: each unique order only contains a single item**.
 
 
 | Field Label | Data Type | Example | 
@@ -67,7 +67,7 @@ Sales volume grew steadily throughout 2020, reaching its highest point in Decemb
 ## Loyalty Program
 When first being introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022.  Now, **loyalty customers have higher total sales and more sales volume than non-loyalty customers**  ([figure 5](./images/loyalty_hist_total_sales_and_sales_volume.png)).
 
-Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer's AOV has been more resilient to change. **From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only dropping by 2% for loyalty customers** ([figure 6]((./images/loyalty_hist_aov.png))).
+Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer's AOV has been more resilient to change. From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only dropping by 2% for loyalty customers.  On average, **loyalty customers now spend $30 more per order than non-loyalty customers**  ([figure 6](./images/loyalty_hist_aov.png)).
 
 # Refund Insights
 
