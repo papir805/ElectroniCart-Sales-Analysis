@@ -7,7 +7,8 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
         * Total sales
         * Sales volume
     * Product Mix
-        * Which items are most purchased?
+        * Which items contribute most to total sales?
+        * Which items are purchased most frequently?
     * Seasonality
         * How do the NSMs change over time?
         * Which month(s) see the highest or lowest NSMs?
@@ -15,20 +16,20 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
         * How do the NSMs compare for loyalty vs. non-loyalty customers?
 2) **Refunds**
     * North Star Metrics (NSM)
-        * Total dollars refunded
+        * Dollars refunded
         * Refund rate
         * Average order value (AOV)
     * How do the NSMs change for each product?
-        * Do certain products have a high return rate?
-        * Are certain products being returned more frequently than others?
-    * How does the amount refunded affect ElectroniCart's bottom line?
+        * Which products have the highest return rates?
+        * Which products are returned most frequently?
+    * How do dollars refunded affect ElectroniCart's bottom line?
 
 
 ## Data Quality
-The dataset required cleaning before analysis as there were several data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
+The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
 
 ## Dataset Structure
-The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned.xlsx) containing 108,127 records with order ID as the table grain, and each record represents a unique order.  **Note: each unique order only contains a single item**.
+The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records with order ID as the table grain, and each record represents a unique order.  **Note: each unique order only contains a single item**.
 
 
 | Field Label | Data Type | Example | 
@@ -64,14 +65,14 @@ Starting in January, **sales fall until reaching their lowest point in May/June*
 Sales volume grew steadily throughout 2020, reaching its highest point in December 2020, but declined throughout 2021 and 2022 and is now lower than most pre-pandemic levels. **Two out of three of the most recent months have the lowest sales volume since the company was established** ([figure 4](./images/sales_volume_heatmap.png)).
 
 ## Loyalty Program
-Since first being introduced in 2019, loyalty program customers have underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022.  **Now, loyalty customers have higher total sales and more sales volume than non-loyalty customers**  ([figure 5](./images/loyalty_hist_total_sales_and_sales_volume.png)).
+When first being introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022.  Now, **loyalty customers have higher total sales and more sales volume than non-loyalty customers**  ([figure 5](./images/loyalty_hist_total_sales_and_sales_volume.png)).
 
-Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer AOV has been more resilient. **From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only droping by 2% for loyalty customers** ([figure 6]((./images/loyalty_hist_aov.png))).
+Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer's AOV has been more resilient to change. **From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only dropping by 2% for loyalty customers** ([figure 6]((./images/loyalty_hist_aov.png))).
 
 # Refund Insights
 
 ## Refund Rates
-On average, about 5% of orders get refunded. However, several items have refund rates much higher than average: 
+On average, ~5% of orders get refunded. However, several items have much higher refund rates: 
 * Thinkpad Laptop (12%)
 * Macbook Air Laptop (11%)
 * Apple iPhone (8%) 
@@ -85,7 +86,7 @@ Four items make up nearly all (99%) of dollars refunded:
 * Apple Airpods Headphones (19%)
 * Thinkpad Laptop (17%)
 
-Because **the Thinkpad and Macbook Air Laptop have some of the highest AOVs and high refund rates**, their returns represent a significant threat to ElectroniCart's revenue. **The 27in 4K Gaming Monitor and Apple Airpods Headphones had low refund rates, but have a high refund frequency**, also making them dangerous.  
+Because **the Thinkpad and Macbook Air Laptop have high AOVs and high refund rates**, their returns represent a significant threat to ElectroniCart's revenue. **The 27in 4K Gaming Monitor and Apple Airpods Headphones** had low refund rates, but **have a high refund frequency**, also making them dangerous.  
 
 **Returns of the Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor constitute 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022**
 ([figure 8](./images/refunds_percent_dollars_refunded_and_refund_count.png)).
