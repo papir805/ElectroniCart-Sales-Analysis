@@ -29,10 +29,15 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
 The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
 
 ## Dataset Structure
-**The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**. Order ID is the table grain, and each record represents a unique order.  Note: each unique order only contains a single item.
+**The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**. Order ID is the table grain, and each record represents a unique order.  
+
+After cleaning, the dataset was normalized and uploaded to a Google BigQuery database for more advanced analysis.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
+
+![database_erd](./images/database_erd.png)
 
 
-| Field Label | Data Type | Example | 
+
+<!-- | Field Label | Data Type | Example | 
 |---|---|---|
 | order_id | string | 5f87a27686c1
 | purchase_ts | date | 2020-04-28
@@ -41,7 +46,7 @@ The dataset required cleaning before analysis.  There were data quality issues r
 | refund_ts | date | 2022-05-21
 | product_name | string | Thinkpad Laptop
 | usd_price | float | 434.05
-| loyalty | boolean | loyalty = 1 <br> non-loyalty = 0
+| loyalty | boolean | loyalty = 1 <br> non-loyalty = 0 -->
 
 # Sales Insights
 
@@ -118,4 +123,4 @@ Based on the insights listed above, the company should consider the following re
 
 
 # Technical Analysis
-All pivot tables, graphs, and calculations used to perform this analysis are contained within the Excel workbook found in this repository.
+All pivot tables and graphs in this analysis are contained within the [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) found in this repository.  The SQL queries used to perform additional calculations can be found [here](https://github.com/papir805/ElectroniCart-Sales-Analysis/tree/master/sql_queries).
