@@ -34,7 +34,7 @@ The dataset required cleaning before analysis.  There were data quality issues r
 ## Dataset Structure
 **The dataset initially came as an [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**. Order ID is the table grain, and each record represents a unique order.  
 
-After cleaning, **the dataset was normalized and uploaded to a Google BigQuery database for more advanced analysis using [SQL queries](https://github.com/papir805/ElectroniCart-Sales-Analysis/tree/master/sql_queries)**.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
+After cleaning, **the dataset was normalized and uploaded to a Google BigQuery database for more advanced analysis in SQL**.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
 
 ![database_erd](./images/database_erd.png)
 
@@ -143,4 +143,4 @@ Based on the insights listed above, the company should consider the following re
 
 
 # Technical Analysis
-All pivot tables and graphs in this analysis are contained within the [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/data/electronicart_data_cleaned_final.xlsx) found in this repository.  The SQL queries used to perform additional calculations can be found [here](https://github.com/papir805/ElectroniCart-Sales-Analysis/tree/master/sql_queries).
+The [Excel workbook](https://github.com/papir805/ElectroniCart-Sales-Analysis/blob/master/electronicart_data_cleaned_final.xlsx) containing all pivot tables and graphs, as well as the SQL queries used to perform additional calculations can be found in this repository.
