@@ -28,7 +28,7 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
 
 
 ## Data Quality
-The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here INSERT LINK LATER](www.google.com_).
+The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here](./issue_log.md).
 
 ## Dataset Structure
 **The dataset initially came as an [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**. Order ID is the table grain, and each record represents a unique order.  
