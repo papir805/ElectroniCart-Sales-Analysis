@@ -1,6 +1,6 @@
 # ElectroniCart Sales Analysis
 ## Objective and Background
-ElectroniCart is an online electronics retailer. The company has collected a wealth of data from 100k+ orders since being established in 2019.  So far, the dataset is underutilized, and this project aims to provide insights and recommendations on the following key areas:
+ElectroniCart is an online electronics retailer.  The company has collected a wealth of data from 100k+ orders since being established in 2019.  So far, the dataset is underutilized, and this project aims to provide insights and recommendations on the following key areas:
 
 1) **Sales**
     * Key Performance Indicators (KPIs)
@@ -31,7 +31,7 @@ ElectroniCart is an online electronics retailer. The company has collected a wea
 The dataset required cleaning before analysis.  There were data quality issues relating to inconsistent formatting, missing values, and more.  Documentation on these issues and their resolution is [here](./issue_log.md).
 
 ## Dataset Structure
-**The dataset initially came as an [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**. Order ID is the table grain, and each record represents a unique order.  
+**The dataset initially came as an [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**.  Order ID is the table grain, and each record represents a unique order.  
 
 After cleaning, **the dataset was normalized and uploaded to a Google BigQuery database for more advanced analysis in [SQL](./sql_queries)**.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
 
@@ -63,7 +63,7 @@ After cleaning, **the dataset was normalized and uploaded to a Google BigQuery d
 ![sales_volume_heatmap](./images/sales_volume_heatmap.png)
 <p style="text-align: center;"><em>Sample pivot table.  Other tables are linked below in their relevant sections.</em></p>
 
-Sales volume grew steadily throughout 2020, reaching its highest point in December 2020, but declined throughout 2021 and 2022 and is now lower than most pre-pandemic levels. **Two out of three of the most recent months have the lowest sales volume since the company was established**.
+Sales volume grew steadily throughout 2020, reaching its highest point in December 2020, but declined throughout 2021 and 2022 and is now lower than most pre-pandemic levels. **Two out of three of the most recent months have the lowest sales volume in the company's lifetime**.
 
 ## Product Mix
 Between 2019 and 2022, **four items constitute 96% of all sales**: 
@@ -80,9 +80,9 @@ Starting in January, **sales fall until reaching their lowest point in May/June*
 **These patterns were more volatile in 2020 and 2021**, likely due to the increased number of people being home when COVID lockdowns were in full effect, but **sales before COVID-19 in 2019 and after COVID-19 in 2022 show similar sales levels, indicating that consumer purchasing behavior may have returned to normal** ([figure 2](./images/sales_by_year.png)).
 
 ## Loyalty Program ([SQL Queries](./sql_queries/avg_days_between_orders.sql))
-**When first being introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022**.  Now, loyalty customers have higher total sales and more sales volume than non-loyalty customers  ([figure 3](./images/loyalty_hist_total_sales_and_sales_volume.png)).
+**When first introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022**.  Now, loyalty customers have higher total sales and more sales volume than non-loyalty customers  ([figure 3](./images/loyalty_hist_total_sales_and_sales_volume.png)).
 
-Although total sales and sales volume dropped from 2021 to 2022 for both types of customer, loyalty customer's AOV has been more resilient to change. From 2020 to 2021, AOV decreased by 24% for non-loyalty customers, yet increased by 10% for loyalty customers, and between 2021 and 2022, AOV decreased an additional 24% for non-loyalty customers, while only dropping by 2% for loyalty customers.  On average, **loyalty customers now spend $30 more per order** ([figure 4](./images/loyalty_hist_aov.png)) **and place orders 60 days more quickly than non-loyalty customers**.
+Although total sales and sales volume dropped from 2021 to 2022 for both customer types, loyalty customers' AOV has been more resilient to change.  From 2020 to 2021, AOV decreased by 24% for non-loyalty customers yet increased by 10% for loyalty customers.  Between 2021 and 2022, AOV fell an additional 24% for non-loyalty customers while only dropping by 2% for loyalty customers.  On average, **loyalty customers now spend $30 more per order** ([figure 4](./images/loyalty_hist_aov.png)) **and place orders 60 days more quickly than non-loyalty customers**.
 
 # Refund Insights
 ![refunds_refund_rate_total_sales_aov](./images/refunds_refund_rate_total_sales_aov.png)
@@ -93,27 +93,16 @@ On average, ~5% of orders get refunded. However, several items have much higher 
 * Macbook Air Laptop (11%)
 * Apple iPhone (8%) 
 
-**Despite a high refund rate, the Apple iPhone represents a tiny chunk of ElectroniCart's sales (~1%) and returns have a negligible impact on dollars refunded**.
+**Despite a high refund rate, the Apple iPhone represents a tiny chunk of ElectroniCart's sales (~1%), and returns have a negligible impact on dollars refunded**.
 
 ## Dollars Refunded
-Four items make up nearly all (99%) of dollars refunded:
+Four items make up nearly all (99%) of the dollars refunded:
 * Macbook Air Laptop (33%)
 * 27in 4K Gaming Monitor (29%)
 * Apple Airpods Headphones (19%)
 * Thinkpad Laptop (17%)
 
-Because **the Thinkpad and Macbook Air Laptop have high AOVs and high refund rates**, their returns represent a significant threat to ElectroniCart's revenue. **The 27in 4K Gaming Monitor and Apple Airpods Headphones** had low refund rates, but **have a high refund frequency**, also contributing to lost sales revenue.  
-
-**Returns of the Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor constitute 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022**
-([figure 5](./images/refunds_percent_dollars_refunded_and_refund_count.png)).
-## Dollars Refunded
-Four items make up nearly all (99%) of dollars refunded:
-* Macbook Air Laptop (33%)
-* 27in 4K Gaming Monitor (29%)
-* Apple Airpods Headphones (19%)
-* Thinkpad Laptop (17%)
-
-Because **the Thinkpad and Macbook Air Laptop have high AOVs and high refund rates**, their returns represent a significant threat to ElectroniCart's revenue. **The 27in 4K Gaming Monitor and Apple Airpods Headphones** had low refund rates, but **have a high refund frequency**, also contributing to lost sales revenue.  
+Because **the Thinkpad and Macbook Air Laptop have high AOVs and high refund rates**, their returns significantly threaten ElectroniCart's revenue. **The 27in 4K Gaming Monitor and Apple Airpods Headphones** had low refund rates, but **have a high refund frequency**, also contributing to lost sales revenue.  
 
 **Returns of the Macbook Air Laptop, the Apple Airpods Headphones, the Thinkpad Laptop, and the 27in 4K Gaming Monitor constitute 8% of all sales and represent $2.2 million in dollars refunded between 2019 and 2022**
 ([figure 5](./images/refunds_percent_dollars_refunded_and_refund_count.png)).
@@ -123,22 +112,22 @@ Based on the insights listed above, the company should consider the following re
 
 ## Sales Team ([SQL queries](./sql_queries/product_sales_volume_pct_changes.sql))
 * Increase promotions during May, June, and July to increase sales during historically slow months.
-* **Investigate why sales of *all* products consistently experience average drops in sales volume between 14% - 47% from September to October**, particularly for these three traditionally best selling items: 
+* **Investigate why sales of *all* products consistently experience average drops in sales volume between 14% - 47% from September to October**, particularly for these three traditionally best-selling items: 
     * ThinkPad Laptop (-47%)
     * Apple Airpod Headphones (-31%)
     * 27in 4k Gaming Monitor (-31%)
-* Collaborate with the loyalty team to identify why spending and AOV for loyalty customers has eclipsed non-loyalty customers since 2021.
+* Collaborate with the loyalty team to identify why spending and AOV for loyalty customers have eclipsed non-loyalty customers since 2021.
 
 
 ## Loyalty Team ([SQL queries](./sql_queries/loyalty_queries.sql))
-* Continue the loyalty program and expand its offerings to increase the number of participating users and AOV, especially given the switch from under- to over-performing in 2021.
+* Continue the loyalty program and expand its offerings to increase the number of participating users and AOV, especially given the switch from underperforming to overperforming in 2021.
     * **Average shipping times for non-loyalty customers (5.502 days) are nearly identical to those of loyalty customers (5.504 days)**.  Consider partnering with shipping carriers to offer faster shipping methods for loyalty customers to incentivize new signups.
 * **Cut social media and affiliate marketing channel spending** for poor conversion rates, 1.06% and 1.53%, respectively, when successfully signing up new loyalty program members, **in favor of direct marketing (72.76% signup rate)**.
 
 ## Inventory Team
 * Start tracking reasons for customer returns and identify why certain products get returned more frequently.  Fix those issues to minimize return rates for items with high AOV, like the Macbook Air Laptop and Thinkpad Laptop, or items with high return frequencies, like the Apple Airpods Headphones and 27in 4K Gaming Monitor.
-* **Phase out the sale of the Bose Soundsport Headphones** for severe underperformance.  **This item only sold 27 units totaling ~$3,000 in revenue over four years.**   Investigate reasons for their poor sales and select new product offerings that are more likely to perform well.   
+* **Phase out the sale of the Bose Soundsport Headphones** for severe underperformance.  **This item only sold 27 units, totaling ~$3,000 in revenue over four years.**   Investigate reasons for their poor sales and select new product offerings that are more likely to perform well.   
 
 
 # Technical Analysis
-The [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing all pivot tables and graphs, as well as the [SQL queries](./sql_queries) used to perform additional calculations can be found in this repository.
+The [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing all pivot tables and graphs, as well as the [SQL queries](./sql_queries) used to perform additional calculations are in this repository.
