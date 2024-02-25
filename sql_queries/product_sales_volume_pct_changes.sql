@@ -16,7 +16,8 @@ FROM
 -- "27in"""" 4k gaming monitor"
 -- bose soundsport headphones
 
--- Question 1: Sales consistently drop from September to October.  Are certain products more succeptible to dips in sales during this time?
+-- Question 1: Sales consistently drop from September to October.  Are certain 
+-- products more succeptible to dips in sales during this time?
 -- Process: 
 -- Step 1 - Cleand and standardize product names
 -- Use REPLACE to clean: 27in" 4k gaming monitor -> 27in 4k gaming monitor
@@ -68,7 +69,8 @@ ORDER BY
   date_of_purchase
 )
 
--- Step 4 - Filter to show only percent changes from Sept to Oct and find the average pct change in sales for each product 
+-- Step 4 - Filter to show only percent changes from Sept to Oct and find the average 
+-- pct change in sales for each product 
 SELECT 
   cleaned_product_name
   , ROUND(
@@ -95,7 +97,8 @@ ORDER BY
 -- macbook air laptop	      | -14.3
 -- bose soundsport headphones	 | 0.0
 
--- Question 2: The Bose Soundsport Headphones only had ~$3,000 in sales.  How many units of this item were sold? 
+-- Question 2: The Bose Soundsport Headphones only had ~$3,000 in sales.  How many 
+-- units of this item were sold? 
 SELECT 
   product_name
   , COUNT(DISTINCT id) AS num_sold

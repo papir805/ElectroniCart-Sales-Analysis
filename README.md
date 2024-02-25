@@ -9,8 +9,6 @@ ElectroniCart is an online electronics retailer.  The company has collected a we
     * Product Mix
         * Which items contribute most to total sales?
         * Which items are purchased most frequently?
-        * Which items contribute most to total sales?
-        * Which items are purchased most frequently?
     * Seasonality
         * How do the KPIs change over time?
         * Which month(s) see the highest or lowest KPIs?
@@ -80,7 +78,7 @@ Starting in January, **sales fall until reaching their lowest point in May/June*
 **These patterns were more volatile in 2020 and 2021**, likely due to the increased number of people being home when COVID lockdowns were in full effect, but **sales before COVID-19 in 2019 and after COVID-19 in 2022 show similar sales levels, indicating that consumer purchasing behavior may have returned to normal** ([figure 2](./images/sales_by_year.png)).
 
 ## Loyalty Program ([SQL Queries](./sql_queries/avg_days_between_orders.sql))
-**When first introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022**.  Now, loyalty customers have higher total sales and more sales volume than non-loyalty customers  ([figure 3](./images/loyalty_hist_total_sales_and_sales_volume.png)).
+**When first introduced in 2019, loyalty program customers underperformed compared to non-loyalty customers, although this switches in 2021 and carries into 2022**.  Now, loyalty customers have higher total sales and more sales volume than non-loyalty customers  ([figure 3](./images/loyalty_hist_total_sales_and_sales_volume_vertical.png)).
 
 Although total sales and sales volume dropped from 2021 to 2022 for both customer types, loyalty customers' AOV has been more resilient to change.  From 2020 to 2021, AOV decreased by 24% for non-loyalty customers yet increased by 10% for loyalty customers.  Between 2021 and 2022, AOV fell an additional 24% for non-loyalty customers while only dropping by 2% for loyalty customers.  On average, **loyalty customers now spend $30 more per order** ([figure 4](./images/loyalty_hist_aov.png)) **and place orders 60 days more quickly than non-loyalty customers**.
 
@@ -126,7 +124,7 @@ Based on the insights listed above, the company should consider the following re
 
 ## Inventory Team
 * Start tracking reasons for customer returns and identify why certain products get returned more frequently.  Fix those issues to minimize return rates for items with high AOV, like the Macbook Air Laptop and Thinkpad Laptop, or items with high return frequencies, like the Apple Airpods Headphones and 27in 4K Gaming Monitor.
-* **Phase out the sale of the Bose Soundsport Headphones** for severe underperformance.  **This item only sold 27 units, totaling ~$3,000 in revenue over four years.**   Investigate reasons for their poor sales and select new product offerings that are more likely to perform well.   
+* **Phase out the sale of the Bose Soundsport Headphones** for severe underperformance.  **This item only sold 27 units, totaling ~$3,000 in revenue over four years**.   Investigate reasons for their poor sales and select new product offerings that are more likely to perform well.   
 
 
 # Technical Analysis

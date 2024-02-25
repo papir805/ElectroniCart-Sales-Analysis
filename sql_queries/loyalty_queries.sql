@@ -1,5 +1,6 @@
 -- Question 1: How do shipping times compare  for loyalty vs. non-loyalty customers?
--- Process: Calculate the shipping time for each order (delivery_ts - ship_ts) and average it grouping by loyalty_program
+-- Process: Calculate the shipping time for each order (delivery_ts - ship_ts) and 
+-- average it grouping by loyalty_program
 SELECT
   CASE 
     WHEN customers.loyalty_program = 1 THEN 'Loyalty' 
@@ -26,10 +27,15 @@ ORDER BY
 -- Loyalty	       | 5.504
 -- Non-Loyalty	   | 5.502
 
--- Question 2: Which marketing channels attract the most loyalty members?  What about for non-loyalty members?  
--- Process: Calculate the percentage of users who signed up through a given marketing channel as defined by:
--- signup_pct = 100 * (x_signups_for_y_marketing_channel_in_z_partition) / (total_users_in_z_partition), partitioned by one's loyalty program status.  
--- Note: some customers have NULL values for the marketing channel field and their marketing channel will be reassigned to 'Unknown'.
+-- Question 2: Which marketing channels attract the most loyalty members?  What about for 
+-- non-loyalty members?  
+-- Process: Calculate the percentage of users who signed up through a given marketing channel 
+-- as defined by:
+-- signup_pct = 100 * (x_signups_for_y_marketing_channel_in_z_partition) / 
+--                                                            (total_users_in_z_partition)
+-- partitioned by one's loyalty program status.  
+-- Note: some customers have NULL values for the marketing channel field and their marketing
+-- channel will be reassigned to 'Unknown'.
 WITH loyalty_marketing_channel_pcts AS (
   SELECT 
     CASE 
@@ -74,8 +80,13 @@ ORDER BY
 
 -- Question 3: Which purchase platforms are most frequently used by loyalty members? 
 --- Process: Calculate the percentage of orders from a given purchase_platform as defined by:
--- pct_used = 100 * (x_orders_for_y_purchase_platform_in_z_partition) / (total_users_in_z_partition), partitioned by one's loyalty program status.  
--- Note: Some orders have customer_ids that do not match with any in the customers table, leading to 27,267 orders where the loyalty_status of the customer making the purchase is unknown.  These orders can't help understand which purchase platforms are most used by loyalty members and will be excluded in this part of the analysis.
+-- pct_used = 100 * (x_orders_for_y_purchase_platform_in_z_partition) / 
+--                                                       (total_users_in_z_partition)
+-- partitioned by one's loyalty program status.  
+-- Note: Some orders have customer_ids that do not match with any in the customers table, 
+-- leading to 27,267 orders where the loyalty_status of the customer making the purchase 
+-- is unknown.  These orders can't help understand which purchase platforms are most used 
+-- by loyalty members and will be excluded in this part of the analysis.
 SELECT 
   CASE
        WHEN loyalty_program = 1 THEN 'Loyalty' 

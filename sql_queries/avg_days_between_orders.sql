@@ -1,4 +1,5 @@
--- Question 1: What is the typical amount of time between purchases for all customers, as well as that of loyalty vs non-loyalty customers?
+-- Question 1: What is the typical amount of time between purchases for all customers, 
+-- as well as that of loyalty vs non-loyalty customers?
 -- Process:
 -- Step 1: For each customer, calculate the number of days between each of their orders.
 WITH date_differences AS (
@@ -30,7 +31,8 @@ customer_avg_days_since_last_order AS (
     customer_id
 ),
 
--- Step 3: Calculate the average number of days between orders over orders placed by loyalty customers vs. orders placed by regular customers.
+-- Step 3: Calculate the average number of days between orders over orders placed by 
+-- loyalty customers vs. orders placed by regular customers.
 loyalty_avg_days_since_last_order AS (
   SELECT
     CASE
@@ -51,7 +53,8 @@ loyalty_avg_days_since_last_order AS (
     loyalty_program
 ),
 
--- Step 4: Calculate the average number of days between orders over all orders placed by all customers.
+-- Step 4: Calculate the average number of days between orders over all orders placed 
+-- by all customers.
 overall_avg_days_since_last_order AS (
   SELECT
     'Overall' AS type
