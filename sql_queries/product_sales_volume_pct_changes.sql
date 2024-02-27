@@ -38,36 +38,36 @@ WITH cleaned_orders AS (
 -- Step 2 - Calculate monthly sales volume for each product
 monthly_sales AS (
   SELECT cleaned_product_name
-  , DATE_TRUNC(purchase_ts, MONTH) AS date_of_purchase
-  , COUNT(DISTINCT id) order_count
-FROM
-  cleaned_orders
-GROUP BY 
-  cleaned_product_name,
-  DATE_TRUNC(purchase_ts, MONTH)
-),
+         , DATE_TRUNC(purchase_ts, MONTH) AS date_of_purchase
+         , COUNT(DISTINCT id) order_count
+  FROM
+    cleaned_orders
+  GROUP BY 
+    cleaned_product_name
+    , DATE_TRUNC(purchase_ts, MONTH)
+  ),
 
 -- Step 3 - Calculate monthly percent change in sales volume for each product
 order_count_pct_changes AS (
   SELECT cleaned_product_name
-  , date_of_purchase
-  , 100 * (
-      order_count - LAG(order_count) OVER (
-        PARTITION BY cleaned_product_name 
-        ORDER BY date_of_purchase
-        )
-     ) / (
-       LAG(order_count) OVER (
-            PARTITION BY cleaned_product_name
-            ORDER BY date_of_purchase
-       )
-     ) AS order_count_pct_change
-FROM 
-  monthly_sales
-ORDER BY 
-  cleaned_product_name,
-  date_of_purchase
-)
+         , date_of_purchase
+         , 100 * (
+             order_count - LAG(order_count) OVER (
+               PARTITION BY cleaned_product_name 
+               ORDER BY date_of_purchase
+               )
+           ) / (
+             LAG(order_count) OVER (
+                   PARTITION BY cleaned_product_name
+                   ORDER BY date_of_purchase
+             )
+          ) AS order_count_pct_change
+  FROM 
+    monthly_sales
+  ORDER BY 
+    cleaned_product_name
+    , date_of_purchase
+  )
 
 -- Step 4 - Filter to show only percent changes from Sept to Oct and find the average 
 -- pct change in sales for each product 
