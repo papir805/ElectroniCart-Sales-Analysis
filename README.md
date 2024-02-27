@@ -108,7 +108,7 @@ Because **the Thinkpad and Macbook Air Laptop have high AOVs and high refund rat
 # Recommendations
 Based on the insights listed above, the company should consider the following recommendations:
 
-## Sales Team ([SQL queries](./sql_queries/product_sales_volume_pct_changes.sql))
+## Sales Team ([SQL Queries](./sql_queries/product_sales_volume_pct_changes.sql))
 * Increase promotions during May, June, and July to increase sales during historically slow months.
 * **Investigate why sales of *all* products consistently experience average drops in sales volume between 14% - 47% from September to October**, particularly for these three traditionally best-selling items: 
     * ThinkPad Laptop (-47%)
@@ -117,7 +117,7 @@ Based on the insights listed above, the company should consider the following re
 * Collaborate with the loyalty team to identify why spending and AOV for loyalty customers have eclipsed non-loyalty customers since 2021.
 
 
-## Loyalty Team ([SQL queries](./sql_queries/loyalty_queries.sql))
+## Loyalty Team ([SQL Queries](./sql_queries/loyalty_queries.sql))
 * Continue the loyalty program and expand its offerings to increase the number of participating users and AOV, especially given the switch from underperforming to overperforming in 2021.
     * **Average shipping times for non-loyalty customers (5.502 days) are nearly identical to those of loyalty customers (5.504 days)**.  Consider partnering with shipping carriers to offer faster shipping methods for loyalty customers to incentivize new signups.
 * **Cut social media and affiliate marketing channel spending** for poor conversion rates, 1.06% and 1.53%, respectively, when successfully signing up new loyalty program members, **in favor of direct marketing (72.76% signup rate)**.
