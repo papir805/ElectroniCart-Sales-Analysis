@@ -12,16 +12,13 @@ SELECT
         DATE_DIFF(order_status.delivery_ts, order_status.ship_ts, DAY)
         ), 3
     ) AS avg_days_to_deliver
-FROM 
-  core.customers
+FROM core.customers
   LEFT JOIN core.orders
     ON customers.id = orders.customer_id
   LEFT JOIN core.order_status
     ON orders.id = order_status.order_id
-GROUP BY
-  customers.loyalty_program
-ORDER BY
-  avg_days_to_deliver DESC;
+GROUP BY customers.loyalty_program
+ORDER BY avg_days_to_deliver DESC;
 -- Results:
 -- loyalty_status	 | avg_days_to_deliver
 -- Loyalty	       | 5.504
@@ -50,20 +47,13 @@ WITH loyalty_marketing_channel_pcts AS (
         ) OVER (PARTITION BY loyalty_program)
         , 2
       ) AS signup_pct 
-  FROM 
-    core.customers 
-  GROUP BY 
-    loyalty_program,
-    marketing_channel
+  FROM core.customers 
+  GROUP BY loyalty_program, marketing_channel
 )
 
-SELECT 
-  * 
-FROM 
-  loyalty_marketing_channel_pcts
-ORDER BY 
-  loyalty_status,
-  signup_pct DESC;
+SELECT * 
+FROM loyalty_marketing_channel_pcts
+ORDER BY loyalty_status, signup_pct DESC;
 
 -- Results:
 -- loyalty_status	| marketing_channel |	signup_pct
@@ -99,23 +89,17 @@ SELECT
                / SUM(COUNT(orders.purchase_platform)) OVER (PARTITION BY loyalty_program)
           , 2
           ) AS pct_used
-FROM 
-  core.orders
+FROM core.orders
   LEFT JOIN core.customers
     ON orders.customer_id = customers.id
 WHERE loyalty_program IS NOT NULL
-GROUP BY 
-  customers.loyalty_program, 
-  orders.purchase_platform
-ORDER BY 
-  loyalty_status,
-  pct_used DESC;
+GROUP BY customers.loyalty_program, orders.purchase_platform
+ORDER BY loyalty_status, pct_used DESC;
 
 SELECT *
-  FROM 
-  core.orders
-  LEFT JOIN core.customers
-    ON orders.customer_id = customers.id
+FROM core.orders
+LEFT JOIN core.customers
+  ON orders.customer_id = customers.id
 WHERE loyalty_program IS NULL
 
 -- Results:
