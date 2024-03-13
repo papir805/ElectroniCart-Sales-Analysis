@@ -129,3 +129,8 @@ Based on the insights listed above, the company should consider the following re
 
 # Technical Analysis
 The [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing all pivot tables and graphs, as well as the [SQL queries](./sql_queries) used to perform additional calculations are in this repository.
+
+## Tableau Dashboard
+Below is a sample of the dashboard created for this analysis focusing on the loyalty program.  The full dashboard can be found [here](https://public.tableau.com/app/profile/jonathan.papir/viz/electroniCart_dashboard/KPIs?publish=yes).
+
+![Loyalty Dashboard](./images/loyalty_dashboard.png)
