@@ -134,4 +134,4 @@ The [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing al
 Below are screenshots of the dashboards created for this analysis focusing on [important KPIs](https://public.tableau.com/views/electroniCart_KPI_dashboard/electroniCartRevenueandProductKPIs?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) and the [loyalty program](https://public.tableau.com/app/profile/jonathan.papir/viz/electroniCart_dashboard/KPIs?publish=yes).
 
 ![KPI Dashboard](./images/kpi_dashboard.png)
-![Loyalty Dashboard](./images/loyalty_dashboard.png)
+![Loyalty Dashboard](./images/loyalty_dashboard.png) 
