@@ -31,7 +31,7 @@ The dataset required cleaning before analysis.  There were data quality issues r
 ## Dataset Structure
 **The dataset initially came as an [Excel workbook](./data/electronicart_data_cleaned_final.xlsx) containing 108,127 records**.  Order ID is the table grain, and each record represents a unique order.  
 
-After cleaning, **the dataset was normalized and uploaded to a Google BigQuery database for more advanced analysis in [SQL](./sql_queries.sql)**.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
+After cleaning, **the dataset was uploaded to a Google BigQuery database for more advanced analysis in [SQL](./sql_queries.sql)**.  The schema consists of four tables: orders, customers, geo_lookup, and order_status.
 
 ![database_erd](./images/database_erd2.png)
 
